@@ -1,0 +1,9 @@
+<h2>Customers</h2>
+<button class="btn btn-primary" (click)="addUpdateModal.openModal()">Add</button>
+<app-notifications #notification [alertClass]="alertClass" [alertMessage]="alertMessage"
+                   [alertType]="alertType"></app-notifications>
+
+<div class="row">
+  <app-customer (edit)="onEdit($event)" (delete)="onDelete($event)" *ngFor="let c of customers" [Customer]="c"></app-customer>
+</div>
+<app-add-update-customer #addUpdateModal></app-add-update-customer>
